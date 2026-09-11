@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3eee4;
+  --color-paper-2: #ebe4d6;
+  --color-surface: #faf7f0;
+  --color-ink: #1c1915;
+  --color-ink-soft: #3f3a33;
+  --color-muted: #6b6459;
+  --color-faint: #8a8378;
+  --color-line: #ddd4c4;
+  --color-line-strong: #c9beab;
+  --color-forest: #1e4d43;
+  --color-forest-deep: #163832;
+  --color-forest-fg: #f4efe6;
+  --color-moss: #3d6b4f;
+  --color-clay: #8b3a32;
+  --color-sand: #c4a574;
+  --color-bg: #f3eee4;
+  --color-fg: #1c1915;
+  --color-primary: #1e4d43;
+  --color-border: #ddd4c4;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --font-sans: "Vazirmatn", "Tahoma", system-ui, sans-serif;
+  --font-statute: "Noto Naskh Arabic", "Vazirmatn", serif;
+  --shadow-card:
+    0 0 0 1px rgba(28, 25, 21, 0.06),
+    0 1px 2px -1px rgba(28, 25, 21, 0.06),
+    0 8px 24px -12px rgba(28, 25, 21, 0.1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-forest) 22%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
